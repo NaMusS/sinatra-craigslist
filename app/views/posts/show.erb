@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+		<nav>
+			<ul>
+				<li><a href="/">Home</a></li>
+				<li><a href="/posts/new">Create New Post</a></li>
+			</ul>
+		</nav>
+		<section>
+			<div>
+				<h1>Body:</h1>
+				<p><%= @post.body %></p>
+			</div>
+			<div>
+				<h2>Categories:</h2>
+				<p><%= @post.category.name %></p>
+			</div>
+			<div>
+				<h2>Date Created:</h2>
+				<p><%= @post.created_at %></p>
+			</div>
+			<div>
+				<a href="/posts/<%= @post.id %>/edit">Edit</a>
+			</div>
+		</section>
+	</body>
+</html>

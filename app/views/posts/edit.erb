@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head></head>
+	<body>
+		<nav>
+			<ul>
+				<li><a href="/">Home</a></li>
+				<li><a href="posts/new">Create New Posts</a></li>
+			</ul>
+	<section>
+		<form action="/posts" method="POST">
+			<div>
+				<label>Body:<label>
+				<textarea name="post[body]" placeholder="Type your post"><%= @post.body %>
+				</textarea>
+			</div>
+			<div>
+				<labeL>Category:</label>
+				<input type="text" name="post[categories]" placeholder="Type your categories, separate it with a comma ','" value="<%= @post.category.name %>"/>
+			</div>
+			<div>
+				<label>Secret Token:<label>
+				<input type="text" name="secret_token"/>
+			</div>
+			<div>
+				<input type="hidden" name="post[id]" value="<%= @post.id %>" />
+				<input type="submit" name="decision" value="edit" />
+				<input type="submit" name="decision" value="delete" />
+			</div>
+		</form>
+	</section>
+	</body>
+</html>
